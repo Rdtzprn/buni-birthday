@@ -1,0 +1,178 @@
+/* ==== Styling Umum ==== */
+body {
+    text-align: center;
+    background-image: url('cute-bg.jpg'); /* Ganti dengan gambar yang dipakai */
+    background-size: cover; /* Biar gambar tetap proporsional */
+    background-position: center; /* Posisinya di tengah */
+    background-repeat: no-repeat; /* Biar nggak keulang */
+    background-attachment: fixed; /* Biar nggak ikut scroll */
+    font-family: 'Indie Flower', cursive;
+    background-color: #ffebf0;
+    min-height: 100vh; /* Biar minimal setinggi layar */
+    overflow-x: hidden; /* Biar ga ada scroll horizontal */
+}
+
+.text-container, .balloon-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Biar ga ada yang keluar layar */
+}
+
+/* ==== Header (Judul Ucapan) ==== */
+h1 {
+    font-size: 3rem;
+    color: #ff4d6d;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ==== Kotak Hadiah (Gift Box) ==== */
+.gift-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.gift-box {
+    width: 180px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+/* ==== Card (Pesan Ucapan) ==== */
+.card {
+    width: 90%;
+    max-width: 350px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    z-index: 20;
+}
+
+/* ==== Balon (Biar Lebih Rapi & Nyebar) ==== */
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap; /* Biar lebih nyebar */
+    justify-content: space-around;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.balloon {
+    width: 70px;
+    height: 100px;
+    background-image: url('balon-lope.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    animation: floatUp 5s linear infinite;
+    opacity: 0;
+}
+
+/* ==== Animasi Balon ==== */
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+}
+
+/* ==== Floating Text (Teks Random) ==== */
+.floating-text {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Shadows Into Light', cursive;
+    animation: fadeText 3s ease-in-out;
+    z-index: 15; /* Lebih kecil dari card */
+}
+
+/* ==== Animasi Floating Text ==== */
+@keyframes fadeText {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.2); }
+}
+
+/* ==== MEDIA QUERIES (Biar Responsif) ==== */
+
+/* 🎯 Untuk layar HP (Lebar max 600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .gift-box {
+        width: 140px;
+    }
+
+    .card {
+        width: 95%;
+        max-width: 280px;
+    }
+
+    .balloon {
+        width: 50px;
+        height: 80px;
+    }
+
+    .floating-text {
+        font-size: 20px;
+    }
+}
+
+/* 🎯 Untuk layar tablet (Lebar max 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .gift-box {
+        width: 160px;
+    }
+
+    .card {
+        width: 85%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Biar gambar nggak kepotong di HP */
+    }
+
+    .card {
+        width: 90%; /* Lebih fleksibel di HP */
+        max-width: 350px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Kecil dikit biar pas di layar HP */
+    }
+
+    .floating-text {
+        font-size: 18px; /* Biar ga terlalu gede */
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Happy Birthday, My Special One! 🎉</h1>
+    <div class="gift-container">
+        <img src="giftbox.png" alt="Gift Box" class="gift-box" id="giftBox" onclick="openGift()">
+    </div>
+
+    <!-- Card buat pesan & Spotify -->
+    <div id="card" class="card hidden-card">
+        <h2>Special Message</h2>
+        <p>Wishing you all the happiness in the world! 💖🎂</p>
+        <div id="spotify" class="spotify-embed">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2JekYbWANgDe54Dndi2I2C?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!-- Balon -->
+    <div id="balloon-container" class="balloon-container"></div>
+    <!-- Teks Muncul -->
+    <div id="text-container" style="position: absolute; width: 100%; height: 100vh; top: 0; left: 0; pointer-events: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
