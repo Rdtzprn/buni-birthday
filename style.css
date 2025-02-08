@@ -1,7 +1,7 @@
 /* ==== Styling Umum ==== */
 body {
     text-align: center;
-    background-image: url('cute-bg.jpg'); /* Ganti dengan gambar yang dipakai */
+    background: linear-gradient(135deg, #FFD1DC, #FFDAC1); 
     background-size: cover; /* Biar gambar tetap proporsional */
     background-position: center; /* Posisinya di tengah */
     background-repeat: no-repeat; /* Biar nggak keulang */
