@@ -1,30 +1,32 @@
 /* ==== Styling Umum ==== */
-body {
+html, body {
     text-align: center;
-    background: linear-gradient(135deg, #FFD1DC, #FFDAC1); 
-    background-size: cover; /* Biar gambar tetap proporsional */
-    background-position: center; /* Posisinya di tengah */
-    background-repeat: no-repeat; /* Biar nggak keulang */
-    background-attachment: fixed; /* Biar nggak ikut scroll */
+    background: linear-gradient(135deg, #FFD1DC, #FFDAC1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Indie Flower', cursive;
     background-color: #ffebf0;
-    min-height: 100vh; /* Biar minimal setinggi layar */
-    overflow-x: hidden; /* Biar ga ada scroll horizontal */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .text-container, .balloon-container {
     position: absolute;
     width: 100%;
     height: 100vh;
-    overflow: hidden; /* Biar ga ada yang keluar layar */
+    overflow: hidden;
 }
 
 /* ==== Header (Judul Ucapan) ==== */
 h1 {
-    font-size: 3rem;
-    color: #ff4d6d;
-    margin: 20px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Indie Flower', cursive;
+    font-size: 4rem;
+    color: rgb(0, 0, 0);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* ==== Kotak Hadiah (Gift Box) ==== */
@@ -56,7 +58,7 @@ h1 {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -72,7 +74,7 @@ h1 {
     width: 100%;
     height: 100vh;
     display: flex;
-    flex-wrap: wrap; /* Biar lebih nyebar */
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     pointer-events: none;
@@ -82,7 +84,7 @@ h1 {
 .balloon {
     width: 70px;
     height: 100px;
-    background-image: url('balon-lope.png'); 
+    background-image: url('balon-lope.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -105,7 +107,7 @@ h1 {
     color: rgba(0, 0, 0, 0.8);
     font-family: 'Shadows Into Light', cursive;
     animation: fadeText 3s ease-in-out;
-    z-index: 15; /* Lebih kecil dari card */
+    z-index: 15;
 }
 
 /* ==== Animasi Floating Text ==== */
@@ -116,43 +118,35 @@ h1 {
 }
 
 /* ==== MEDIA QUERIES (Biar Responsif) ==== */
-
-/* 🎯 Untuk layar HP (Lebar max 600px) */
 @media (max-width: 600px) {
     h1 {
         font-size: 2.2rem;
     }
-
     .gift-box {
         width: 140px;
     }
-
     .card {
         width: 95%;
         max-width: 280px;
     }
-
     .balloon {
         width: 50px;
         height: 80px;
     }
-
     .floating-text {
         font-size: 20px;
     }
 }
 
-/* 🎯 Untuk layar tablet (Lebar max 1024px) */
 @media (max-width: 1024px) {
     h1 {
         font-size: 2.5rem;
     }
-
     .gift-box {
         width: 160px;
     }
-
     .card {
+        top: 55%;
         width: 85%;
         max-width: 320px;
     }
@@ -160,19 +154,35 @@ h1 {
 
 @media (max-width: 768px) {
     body {
-        background-size: contain; /* Biar gambar nggak kepotong di HP */
+        background-size: cover;
     }
-
     .card {
-        width: 90%; /* Lebih fleksibel di HP */
+        width: 90%;
         max-width: 350px;
     }
-
     h1 {
-        font-size: 2rem; /* Kecil dikit biar pas di layar HP */
+        font-size: 2rem;
     }
-
     .floating-text {
-        font-size: 18px; /* Biar ga terlalu gede */
+        font-size: 18px;
     }
+}
+
+/* ==== Animasi Teks Bergerak ==== */
+.animated-text span {
+    display: inline-block;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+.animated-text span:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.animated-text span:nth-child(odd) {
+    animation-delay: 0s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }

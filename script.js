@@ -16,7 +16,7 @@ function openGift() {
         card.style.display = 'block'; // Munculin card
 
         // Mulai teks random setelah hadiah dibuka
-        setInterval(spawnText, 350);
+        setInterval(spawnText, 200);
     }, 300);
 }
 
@@ -59,7 +59,7 @@ function spawnBalloon() {
 
 function spawnText() {
     let textContainer = document.getElementById('text-container');
-    let words = ["Happy Bday!", "Wish u the best!", "🎉🎂💖🐰", "Stay awesome!", "Much love!", "I Love You!", "Te Amo!", "Ich liebe dich!", "Aku Sayang Kamu!"]; // Kata-kata random
+    let words = ["Happy Bday!", "Wish u the best!", "🎉🎂💖🐰", "Je t'aime!", "Aishiteru!", "I Love You!", "Te Amo!", "Ich liebe dich!", "Aku Sayang Kamu!", "Saranghaeyo!", "Wǒ ài nǐ!", "Ti amo!"]; // Kata-kata random
     
     let textElement = document.createElement('div');
     textElement.classList.add('floating-text');
