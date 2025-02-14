@@ -1,6 +1,8 @@
 function openGift() {
     let giftBox = document.getElementById('giftBox');
     let card = document.getElementById('card');
+    let audio = document.getElementById('bgMusic');
+    audio.play().catch(error => console.log("Error Play:", error));
 
     // Efek pembesaran sebelum hilang
     giftBox.style.transform = 'scale(1.2)';
