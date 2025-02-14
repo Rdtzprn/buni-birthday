@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Tambahkan musik baru
         let newMusic = document.createElement("audio");
-        newMusic.src = "Music/You Found Me.mp3";
+        newMusic.src = "Music/Mosawo ⧸ もさを - Koiiro ⧸ 恋色 (Piano Cover ⧸ ピアノ).mp3";
         newMusic.id = "newMusic";
         newMusic.preload = "auto";
         newMusic.volume = 1.0;
