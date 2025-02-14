@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday!</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <h1 class="animated-text">
-        <span>H</span><span>a</span><span>p</span><span>p</span><span>y</span> 
-        <span>B</span><span>i</span><span>r</span><span>t</span><span>h</span><span>d</span><span>a</span><span>y</span> 
-        <span>M</span><span>y</span> <span>B</span><span>u</span><span>n</span><span>i</span>
-        <span>!</span> <span>🎉</span><span>🐰</span>
+      <span>H</span><span>a</span><span>p</span><span>p</span><span>y</span>
+      <span>B</span><span>i</span><span>r</span><span>t</span><span>h</span
+      ><span>d</span><span>a</span><span>y</span> <span>M</span><span>y</span>
+      <span>B</span><span>u</span><span>n</span><span>i</span> <span>!</span>
+      <span>🎉</span><span>🐰</span>
     </h1>
-    
+
     <div class="gift-container">
-        <img src="giftbox.png" alt="Gift Box" class="gift-box" id="giftBox" onclick="openGift()">
+      <img
+        src="giftbox.png"
+        alt="Gift Box"
+        class="gift-box"
+        id="giftBox"
+        onclick="openGift()"
+      />
     </div>
 
     <!-- Card buat pesan & Spotify -->
     <div id="card" class="card hidden-card">
-        <h2>For you!💗</h2>
-        <p></p>
-        <div id="spotify" class="spotify-embed">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2JekYbWANgDe54Dndi2I2C?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+      <h2>For you!💗</h2>
+      <p>
+        HAPPY BIRTHDAY NONO, ENO, ONEL. SUDAH TUWA MAKIN TUWA WKWKWKWKWK,
+        SEMOGA PANJANG UMUR, SEHAT SELALU, REZEKINYA DI GAMPANGIN BIAR BANYAK
+        DUIT EAA, JADI PRIBADI YG LEBIH BAIK MESKIPUN YG INI UDAH BAIK BGTTT
+        LOPIU, MAKIN PATUH SAMA ORANG TUA, MAKIN TAAT, MAKIN CANTIK, MAKIN BAIK
+        MAKIN CAYANG CAMA AKUU 😋, POKOKNYA WISH YOU ALL THE BEST SAYANGKUUU!!!
+      </p>
     </div>
 
     <!-- Balon -->
     <div id="balloon-container" class="balloon-container"></div>
     <!-- Teks Muncul -->
-    <div id="text-container" style="position: absolute; width: 100%; height: 100vh; top: 0; left: 0; pointer-events: none;"></div>
+    <div
+      id="text-container"
+      style="
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      "
+    ></div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

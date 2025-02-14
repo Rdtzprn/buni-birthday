@@ -118,32 +118,33 @@ h1 {
 }
 
 /* ==== MEDIA QUERIES (Biar Responsif) ==== */
-@media (max-width: 768px) {
+/* 🎯 Untuk layar HP (Lebar max 600px) */
+@media (max-width: 600px) {
     h1 {
         font-size: 2.2rem;
     }
 
     .gift-box {
-        width: 140px;
+        width: 8rem;
     }
 
     .card {
         width: 95%;
-        max-width: 280px;
-        top: 50%; /* Balikin dikit biar pas di HP */
+        max-width: 17.5rem;
+        padding: 1.5rem; /* Pakai rem biar lebih responsif */
+        top: 50%;
         transform: translate(-50%, -50%);
     }
 
     .balloon {
-        width: 50px;
-        height: 80px;
+        width: 3.125rem;
+        height: 5rem;
     }
 
     .floating-text {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 }
-
 
 @media (max-width: 1024px) {
     h1 {
@@ -169,6 +170,7 @@ h1 {
         transform: translate(-50%, -60%);
     }
 }
+
 /* ==== Animasi Teks Bergerak ==== */
 .animated-text span {
     display: inline-block;
