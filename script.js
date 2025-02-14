@@ -1,83 +1,131 @@
-function openGift() {
-    let giftBox = document.getElementById('giftBox');
-    let card = document.getElementById('card');
-    let audio = document.getElementById('bgMusic');
-    audio.play().catch(error => console.log("Error Play:", error));
+document.addEventListener("DOMContentLoaded", function () {
+    let bgMusic = document.getElementById("bgMusic");
+    let currentMusic = bgMusic; // Musik aktif saat ini
+    let originalMusicTime = 0; // Posisi terakhir sebelum ganti lagu
 
-    // Efek pembesaran sebelum hilang
-    giftBox.style.transform = 'scale(1.2)';
+    function openGift() {
+        let giftBox = document.getElementById('giftBox');
+        let card = document.getElementById('card');
 
-    // Spawn balon dengan jumlah random (20-25)
-    let totalBalloons = Math.floor(Math.random() * 6) + 20;
-    for (let i = 0; i < totalBalloons; i++) {
-        setTimeout(spawnBalloon, Math.random() * 500);
+        bgMusic.play().catch(error => console.log("Error Play:", error));
+
+        // Efek animasi sebelum menghilang
+        giftBox.style.transform = 'scale(1.2)';
+
+        // Spawn balon dengan jumlah random (20-25)
+        for (let i = 0; i < Math.floor(Math.random() * 6) + 20; i++) {
+            setTimeout(spawnBalloon, Math.random() * 500);
+        }
+
+        setTimeout(() => {
+            giftBox.style.display = 'none';
+            card.style.display = 'block'; // Tampilkan kartu
+            setInterval(spawnText, 200);  // Mulai teks animasi
+            playMusic(); // Mainkan musik
+        }, 300);
     }
 
-    setTimeout(() => {
-        giftBox.style.display = 'none';
-        card.style.display = 'block'; // Tampilkan kartu
-        setInterval(spawnText, 200);  // Mulai teks animasi
-        playMusic(); // Mainkan musik
-    }, 300);
-}
+    function spawnBalloon() {
+        let balloonContainer = document.getElementById('balloon-container');
+        let balloon = document.createElement('div');
+        balloon.classList.add('balloon');
 
-function spawnBalloon() {
-    let balloonContainer = document.getElementById('balloon-container');
-    let balloon = document.createElement('div');
-    balloon.classList.add('balloon');
+        // Set properti random
+        Object.assign(balloon.style, {
+            left: `${Math.random() * 100}%`,
+            bottom: `-${Math.random() * 30 + 100}px`,
+            width: `${Math.random() * 40 + 50}px`,
+            height: `${(Math.random() * 40 + 50) * 1.5}px`,
+            transform: `rotate(${Math.random() * 30 - 15}deg)`,
+            animation: `floatUp ${Math.random() * 3 + 3}s ease-in forwards`,
+            animationDelay: `${Math.random() * 2}s`
+        });
 
-    // Set posisi random
-    balloon.style.left = `${Math.random() * 100}%`;
-    balloon.style.bottom = `-${Math.random() * 30 + 100}px`; // Antara 100px - 150px dari bawah
+        balloonContainer.appendChild(balloon);
+        setTimeout(() => balloon.remove(), 5000);
+    }
 
-    // Set ukuran dan rotasi random
-    let size = Math.random() * 40 + 50;
-    balloon.style.width = `${size}px`;
-    balloon.style.height = `${size * 1.5}px`;
-    balloon.style.transform = `rotate(${Math.random() * 30 - 15}deg)`;
+    function spawnText() {
+        let textContainer = document.getElementById('text-container');
+        let words = [
+            "Happy Bday!", "Wish u the best!", "🎉🎂💖🐰", "Je t'aime!",
+            "Aishiteru!", "I Love You!", "Te Amo!", "Ich liebe dich!",
+            "Aku Sayang Kamu!", "Saranghaeyo!", "Wǒ ài nǐ!", "Ti amo!"
+        ];
 
-    // Set animasi dengan durasi dan delay random
-    let duration = Math.random() * 3 + 3;
-    let delay = Math.random() * 2;
-    balloon.style.animation = `floatUp ${duration}s ease-in forwards`;
-    balloon.style.animationDelay = `${delay}s`;
+        let textElement = document.createElement('div');
+        textElement.classList.add('floating-text');
+        textElement.innerText = words[Math.floor(Math.random() * words.length)];
 
-    balloonContainer.appendChild(balloon);
+        // Set posisi random
+        Object.assign(textElement.style, {
+            left: `${Math.random() * 90}%`,
+            top: `${Math.random() * 90}%`
+        });
 
-    // Hapus balon setelah animasi selesai
-    setTimeout(() => balloon.remove(), (duration + delay) * 1000);
-}
+        textContainer.appendChild(textElement);
+        setTimeout(() => textElement.remove(), 3000);
+    }
 
-function spawnText() {
-    let textContainer = document.getElementById('text-container');
-    let words = [
-        "Happy Bday!", "Wish u the best!", "🎉🎂💖🐰", "Je t'aime!", 
-        "Aishiteru!", "I Love You!", "Te Amo!", "Ich liebe dich!", 
-        "Aku Sayang Kamu!", "Saranghaeyo!", "Wǒ ài nǐ!", "Ti amo!"
-    ];
+    function playMusic() {
+        // let startTime = 30;
+        // let stopTime = 90;
 
-    let textElement = document.createElement('div');
-    textElement.classList.add('floating-text');
-    textElement.innerText = words[Math.floor(Math.random() * words.length)];
+        bgMusic.currentTime = startTime;
+        bgMusic.play();
 
-    // Set posisi random
-    textElement.style.left = `${Math.random() * 90}%`;
-    textElement.style.top = `${Math.random() * 90}%`;
+        setTimeout(() => bgMusic.pause(), (stopTime - startTime) * 1000);
+    }
 
-    textContainer.appendChild(textElement);
+    function openEnvelope() {
+        console.log("Amplop diklik");
+        let popup = document.getElementById("popup");
+        popup.style.display = "flex";
 
-    // Hapus setelah animasi selesai
-    setTimeout(() => textElement.remove(), 3000);
-}
+        if (!bgMusic.paused) {
+            originalMusicTime = bgMusic.currentTime;
+            bgMusic.pause();
+        }
 
-function playMusic() {
-    let music = document.getElementById('bgMusic');
-    // let startTime = 30; // Mulai dari detik ke-30
-    // let stopTime = 90;  // Berhenti di detik ke-90
+        // Hapus musik amplop sebelumnya jika ada
+        let existingMusic = document.getElementById("newMusic");
+        if (existingMusic) existingMusic.remove();
 
-    music.currentTime = startTime;
-    music.play();
+        // Tambahkan musik baru
+        let newMusic = document.createElement("audio");
+        newMusic.src = "Music/You Found Me.mp3";
+        newMusic.id = "newMusic";
+        newMusic.preload = "auto";
+        newMusic.volume = 1.0;
+        document.body.appendChild(newMusic);
 
-    // Stop musik setelah durasi tertentu
-    setTimeout(() => music.pause(), (stopTime - startTime) * 1000);
-}
+        newMusic.play().then(() => console.log("Lagu amplop berhasil diputar!"))
+            .catch(error => console.log("Gagal memutar lagu amplop:", error));
+
+        currentMusic = newMusic;
+    }
+
+    function closePopup() {
+        let popup = document.getElementById("popup");
+
+        let newMusic = document.getElementById("newMusic");
+        if (newMusic) {
+            newMusic.pause();
+            newMusic.remove();
+            console.log("Lagu amplop dihentikan & dihapus");
+        }
+
+        if (bgMusic && originalMusicTime > 0) {
+            bgMusic.currentTime = originalMusicTime;
+            bgMusic.play().then(() => console.log("Lagu utama lanjut dari:", originalMusicTime))
+                .catch(error => console.log("Gagal melanjutkan lagu utama:", error));
+        }
+
+        popup.style.display = "none";
+    }
+
+    // Buat fungsi bisa diakses dari HTML
+    window.openGift = openGift;
+    window.openEnvelope = openEnvelope;
+    window.closePopup = closePopup;
+});

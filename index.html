@@ -41,9 +41,9 @@
       />
     </div>
 
-    <!-- Card buat pesan & Spotify -->
+    <!-- Card buat pesan & amplop -->
     <div id="card" class="card hidden-card">
-      <h2>For you!💗</h2>
+      <h2>For you my cute buni!💗</h2>
       <p>
         HAPPY BIRTHDAY NONO, ENO, ONEL. SUDAH TUWA MAKIN TUWA WKWKWKWKWK,
         SEMOGA PANJANG UMUR, SEHAT SELALU, REZEKINYA DI GAMPANGIN BIAR BANYAK
@@ -51,7 +51,30 @@
         LOPIU, MAKIN PATUH SAMA ORANG TUA, MAKIN TAAT, MAKIN CANTIK, MAKIN BAIK
         MAKIN CAYANG CAMA AKUU 😋, POKOKNYA WISH YOU ALL THE BEST SAYANGKUUU!!!
       </p>
+      <div class="envelope-container">
+        <img
+          src="Image/surat_cintah.png"
+          alt="Envelope"
+          class="envelope"
+          id="envelope"
+          height="100"
+          width="100"
+          onclick="openEnvelope()"
+        />
+      </div>
+      <div id="message" class="hidden-message">
+        <p>🎊 Surprise! Ini hadiah spesial buat kamu! 🎊</p>
+      </div>
     </div>
+    <!-- Pop-up buat amplop -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2>🎉 Love Letter 🎉</h2>
+        <p>Hai sayangg, makasih ya kamu mau jalanin hubungan ini sama aku meskipun aku banyak kurangnya, aku banyak minta, kamu ttp mau jalanin hubungan ini, aku sayang kamuu, mwahh. Setiap hal yang kamu kasih ke aku itu berasa spesial buat aku, dari cara kamu ngasih dukungan, ngasih semangat, perhatian, pengertian, mau diajak main dan banyakkk lagi, buat aku itu spesiall, menurut kamu berlebihan ga kalo aku baper ama sikap kamu yg begitu, karna mungkin kamu ngelakuin hal yg sama ke org lain? atau mungkin itu normal?, tapi aku gamau kamu ngasih hal begitu bgtu ke cowo lainnn skrg itu khusus akuu. aku beruntung banget bisa kenal dan bahkan dicintai sama kamu, itu keberuntungan yg paling beruntung pokoknya gitu lah, kehadiran kamu tuh bikin aku pengen ngerasain cinta lagii, karna sama kamu itu selalu bikin aku bahagiaaa, kmu juga bikin aku lebih semangat, bikin aku pengen jadi yg lebih baik lagii, and i wanna be a best bf for youu, aku juga gatau kenapa bisa kecintaan bangett sama kamuu, aku bener bener sesayang ituu, sayang bangetttt, mungkin ya karna itu KAMU, perasaan cinta dan sayang aku buat kamu akan terus bertambah tak ada ujungnya. sayangg, kamu itu udah sempurna buat aku jadi jangan ngerasa kamu itu kurang ya kocak, aku akan selalu dukung kamu selagi itu baik buat kamu, jangan bosen bosen ya sama akuu, jangan cari yg lain jugaaa😡 tetep sama aku selamanyaa disisi akuu. AKU SAYANG KAMU SELAMANYAAA💞</p>
+    </div>
+</div>
+
 
     <!-- Balon -->
     <div id="balloon-container" class="balloon-container"></div>
