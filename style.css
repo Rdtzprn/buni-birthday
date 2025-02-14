@@ -84,7 +84,7 @@ h1 {
 .balloon {
     width: 70px;
     height: 100px;
-    background-image: url('balon-lope.png');
+    background-image: url('Image/balon-lope.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

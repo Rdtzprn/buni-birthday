@@ -70,8 +70,8 @@ function spawnText() {
 
 function playMusic() {
     let music = document.getElementById('bgMusic');
-    let startTime = 30; // Mulai dari detik ke-30
-    let stopTime = 90;  // Berhenti di detik ke-90
+    // let startTime = 30; // Mulai dari detik ke-30
+    // let stopTime = 90;  // Berhenti di detik ke-90
 
     music.currentTime = startTime;
     music.play();
